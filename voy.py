@@ -2,7 +2,7 @@
 # TODO: randomize alternatives, instead of sort
 # TODO: don't print result per question, store a counter of correct answers
 # TODO: catch invalid user input with a message
-# TODO: 
+# TODO: use letters as answer identifiers
 
 import random
 from string import ascii_lowercase
@@ -30,11 +30,11 @@ for question, alternatives in QUESTIONS_RUS.items():
     print(question)
     for label, alternative in enumerate(sorted_alternatives):
         print(f"  {label+1}) {alternative}")
-    answer_label = int(input())-1
+    answer_label = int(input("Answer: "))-1
     answer = sorted_alternatives[answer_label]
     if answer == correct_answer:
         print("Correct!")
-        total_correct =+ 1
+        total_correct = total_correct + 1
     else:
         print(f"The answer is {correct_answer!r}, not {answer!r}")
 
